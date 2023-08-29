@@ -1,6 +1,13 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
 
-app.get('/', (req, res) => res.send('Hola estamos en el servidor!'))
-app.listen(port, () => console.log(`app listening on port ${port}!`))
+const app = express();
+const port = 3000;
+app.get('/', (req, res) => {
+  res.send('Estamos en el servidor usando express y Typescript');
+});
+app.listen(port, err => {
+  if (err) {
+    return console.error(err);
+  }
+  return console.log(`servidor is listening on ${port}`);
+});
