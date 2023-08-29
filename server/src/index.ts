@@ -1,10 +1,12 @@
 import express from 'express';
-import { Express, Request, Response} from 'express';
+const app = express();
 
-const app: Express = express();
-// const app = express();
+import indexRoutes from './routes/index';
+
+app.use(indexRoutes);
+
 const port = 3000;
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (req, res) => {
   res.send('Estas es la página principal del servidor ArtTechStore');
 });
 app.listen(port, () => {
