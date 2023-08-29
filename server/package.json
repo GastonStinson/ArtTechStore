@@ -5,8 +5,7 @@
   "main": "index.js",
   "commitlint": {
     "extends": "@commitlint/config-conventional"
-   },
-   
+  },
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "build:watch": "tsc --build tsconfig.json --watch",
@@ -33,6 +32,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1",
     "soket.io": "^0.0.1-security",
+    "tsc": "^2.0.4",
     "typescript": "^5.2.2",
     "uuid": "^9.0.0"
   },
