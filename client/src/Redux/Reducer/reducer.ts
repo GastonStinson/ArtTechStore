@@ -14,6 +14,7 @@ export type InitialState = {
 
 type Action={
   type:string;
+  payload:[];
 }
 
 const initialState: InitialState = {
@@ -23,6 +24,19 @@ const initialState: InitialState = {
 
 export default function rootReducer(state = initialState, action:Action){
   switch(action.type){
+    case 'SEARCH_ARTIST':
+      let artist: Array<any> = [];
+
+    if (action.payload.length === 0) {
+      artist = state.artGallery;
+    } else {
+      artist = action.payload.map((ele: string) => ele);
+    }
+
+  return {
+    ...state,
+    searchArtist: artist,
+  };
     case 'RESET_PAGE':
             
             return {
