@@ -1,1 +1,0 @@
-const Favourite = require('../models/favourite.js')

@@ -1,1 +1,0 @@
-const Bet = require('../models/bet.js')
