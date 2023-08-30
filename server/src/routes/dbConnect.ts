@@ -1,10 +1,12 @@
-import { Pool } from 'pg';
+import { Sequelize } from 'sequelize-typescript';
 import 'dotenv/config';
 
-
-export const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
+const sequelize = new Sequelize({
+    dialect: 'postgres',
+    username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    host: 'localhost',
+    database: process.env.DB_NAME,
 });
+
+export default sequelize;

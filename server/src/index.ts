@@ -1,4 +1,9 @@
 import express from 'express';
+import sequelize from './routes/dbConnect';
+//import User  from './models/user';
+import dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
 
 import indexRoutes from './routes/index';
@@ -9,10 +14,17 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(indexRoutes);
 
+// Sincronizar los modelos con la base de datos
+sequelize.sync({ force: true })
+    .then(() => {
+        console.log('Base de datos sincronizada');
+    })
+    .catch((error) => {
+        console.error('Error al sincronizar la base de datos:', error);
+    });
+
+
 const port = 3000;
-app.get('/', (req, res) => {
-    res.send('Estas es la página principal del servidor ArtTechStore');
-});
 app.listen(port, () => {
     console.log(`servidor is listening on ${port}`);
 });

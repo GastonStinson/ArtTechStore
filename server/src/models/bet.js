@@ -1,6 +1,6 @@
-const { DataTypes } = require('sequelize');
+import { DataTypes } from 'sequelize';
 
-module.exports = (sequelize) => {
+export default (sequelize) => {
     sequelize.define('bet', {
         id: {
             type: DataTypes.INTEGER,
@@ -11,5 +11,5 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         }
-    })
-} 
+    });
+};
