@@ -1,8 +1,8 @@
 import { Router } from 'express';
 const router = Router();
 
-router.get('/test', (req, res) => {
-    res.send('Test ArtTechStore');
-});
+import { getUsers } from '../controllers/index.controller';
+
+router.get('/users', getUsers);
 
 export default router;
