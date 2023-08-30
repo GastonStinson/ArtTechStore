@@ -14,7 +14,7 @@ CREATE TABLE users (
     direction VARCHAR,
 );
 
-INSERT INTO users (name, email, password, birthdate, direction)
+INSERT INTO users (name, mail, password, birthdate, direction)
     VALUES ('Gaston', 'gaston@ibm.com', 'gaston', '2000-01-01', 'CABA'), ('Santi', 'santi@ibm.com', 'santi', '2000-01-01', 'CABA'), 
     ('Luis', 'luis@ibm.com', 'luis', '2000-01-01', 'CABA'), ('Joan', 'joan@ibm.com', 'joan', '2000-01-01', 'CABA'),
     ('Yami', 'yami@ibm.com', 'yami', '2000-01-01', 'CABA'), ('Joaquin', 'joaquin@ibm.com', 'joaquin', '2000-01-01', 'CABA'), 
