@@ -7,7 +7,7 @@ const App: React.FC = () => {
 
   if (location.pathname === '/') {
     const cardProps = {
-      id: 'tarjeta-1', // Agrega el id deseado aquí
+      id: '1',  // Agrega el id deseado aquí
       imageURL: 'arte.jpg',
       type: 'Type',
       name: 'Name',
