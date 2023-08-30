@@ -1,12 +1,18 @@
 import express from 'express';
-import { Express, Request, Response} from 'express';
+const app = express();
 
-const app: Express = express();
-// const app = express();
+import indexRoutes from './routes/index';
+
+//middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use(indexRoutes);
+
 const port = 3000;
-app.get('/', (req: Request, res: Response) => {
-  res.send('Estas es la página principal del servidor ArtTechStore');
+app.get('/', (req, res) => {
+    res.send('Estas es la página principal del servidor ArtTechStore');
 });
 app.listen(port, () => {
-   console.log(`servidor is listening on ${port}`);
+    console.log(`servidor is listening on ${port}`);
 });
