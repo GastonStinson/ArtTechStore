@@ -1,8 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import  rootReducer  from "./sliceRoot";
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from '@redux-devtools/extension';
+import rootReducer from './reducer';
 
-export default configureStore({
-  reducer: {
+const composeEnhancer = composeWithDevTools(applyMiddleware(thunk));
+export const store = createStore(
     rootReducer,
-  },
-});
+    composeEnhancer,
+);

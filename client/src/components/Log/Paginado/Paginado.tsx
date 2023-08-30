@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import style from '..CardContainer/paginado.module.css'
+import style from './paginado.module.css'
 import { prev,next } from "../../../redux/action";
 
 interface PaginateProps {
