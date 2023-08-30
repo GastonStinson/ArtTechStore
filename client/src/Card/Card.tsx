@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import style from './Card.module.css';
 
-
 interface CardProps {
+  id: string;
   imageURL: string;
   type: string;
   name: string;
@@ -10,7 +10,7 @@ interface CardProps {
   cost: string;
 }
 
-const Card: React.FC<CardProps> = ({ imageURL, type, name, artistName, cost }) => {
+const Card: React.FC<CardProps> = ({ id, imageURL, type, name, artistName, cost }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -26,6 +26,7 @@ const Card: React.FC<CardProps> = ({ imageURL, type, name, artistName, cost }) =
 
   return (
     <div
+      id={id}
       className={`${style.card} ${isHovered ? style.hovered : ''}`}
       style={cardStyle}
       onMouseEnter={() => setIsHovered(true)}

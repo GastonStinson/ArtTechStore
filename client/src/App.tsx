@@ -1,12 +1,13 @@
-import { useLocation, Route, Routes } from 'react-router-dom'; // Añade Route y Routes a tus importaciones
+import { useLocation, Route, Routes } from 'react-router-dom';
 import Card from './Card/Card';
-import './App.css'
+import './App.css';
 
 const App: React.FC = () => {
   const location = useLocation();
 
   if (location.pathname === '/') {
     const cardProps = {
+      id: 'tarjeta-1', // Agrega el id deseado aquí
       imageURL: 'arte.jpg',
       type: 'Type',
       name: 'Name',
@@ -22,6 +23,6 @@ const App: React.FC = () => {
       </>
     );
   }
-}
+};
 
 export default App;
