@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-const User = require('../models/user.js')
+
+const User = require('../models/user')
 
 
 export const createUser = async (req: Request, res: Response) => {
@@ -11,8 +12,6 @@ export const createUser = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al crear el usuario' });
   }
 };
-
-
 
 export const getUserById = async (req: Request, res: Response) => {
   const userId = req.params.id;
@@ -27,9 +26,6 @@ export const getUserById = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al obtener el usuario' });
   }
 };
-
-
-
 
 export const updateUser = async (req: Request, res: Response) => {
   const userId = req.params.id;
@@ -49,8 +45,6 @@ export const updateUser = async (req: Request, res: Response) => {
   }
 };
 
-
-
 export const deleteUser = async (req: Request, res: Response) => {
   const userId = req.params.id;
 
@@ -67,3 +61,5 @@ export const deleteUser = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al eliminar el usuario' });
   }
 };
+
+

@@ -1,43 +1,89 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/db.js");
 
-module.exports = (sequelize) => {
-    sequelize.define('product', {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        price: {
-            type: DataTypes.FLOAT,
-            validate: {
-                min: 1 //Valor minimo
-            },
-        },
-        published: {
-            tpye: DataTypes.DATEONLY
-        },
-        posted: {
-            type: DataTypes.BOOLEAN
-        },
-        bet: {
-            type: DataTypes.BOOLEAN
-        },
-        type: {
-            type: DataTypes.ENUM('Pintura', 'Escultura', 'Dibujo')
-        },
-        technique: {
-            type: DataTypes.ENUM('Oleo', 'Lapiz')
-        },
-        description: {
-            type: DataTypes.TEXT
-        },
-        image: {
-            type: DataTypes.TEXT
-        }
+const Product = sequelize.define(
+  "product",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    price: {
+      type: DataTypes.FLOAT,
+      validate: {
+        min: 1, //Valor minimo
+      },
+    },
+    published: {
+      type: DataTypes.DATEONLY,
+    },
+    posted: {
+      type: DataTypes.BOOLEAN,
+    },
+    bet: {
+      type: DataTypes.BOOLEAN,
+    },
+    type: {
+      type: DataTypes.ENUM("Pintura", "Escultura", "Dibujo"),
+    },
+    technique: {
+      type: DataTypes.ENUM("Oleo", "Lapiz"),
+    },
+    description: {
+      type: DataTypes.TEXT,
+    },
+    image: {
+      type: DataTypes.TEXT,
+    },
+  },
+  { timestamps: false }
+);
 
-    }, { timestamps: false });
-}
+module.exports = Product;
+
+// module.exports = (sequelize) => {
+//     sequelize.define('product', {
+//         id: {
+//             type: DataTypes.INTEGER,
+//             autoIncrement: true,
+//             primaryKey: true
+//         },
+//         title: {
+//             type: DataTypes.STRING,
+//             allowNull: false
+//         },
+//         price: {
+//             type: DataTypes.FLOAT,
+//             validate: {
+//                 min: 1 //Valor minimo
+//             },
+//         },
+//         published: {
+//             tpye: DataTypes.DATEONLY
+//         },
+//         posted: {
+//             type: DataTypes.BOOLEAN
+//         },
+//         bet: {
+//             type: DataTypes.BOOLEAN
+//         },
+//         type: {
+//             type: DataTypes.ENUM('Pintura', 'Escultura', 'Dibujo')
+//         },
+//         technique: {
+//             type: DataTypes.ENUM('Oleo', 'Lapiz')
+//         },
+//         description: {
+//             type: DataTypes.TEXT
+//         },
+//         image: {
+//             type: DataTypes.TEXT
+//         }
+
+//     }, { timestamps: false });
+// }

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-const Product = require('../models/product.js')
+const Product = require('../models/product')
 
 export const createProduct = async (req: Request, res: Response) => {
   const { name, price } = req.body;
@@ -13,9 +13,6 @@ export const createProduct = async (req: Request, res: Response) => {
   }
 };
 
-
-
-
 export const getProducts = async (req: Request, res: Response) => {
   try {
     const products = await Product.findAll();
@@ -25,8 +22,6 @@ export const getProducts = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al obtener los productos' });
   }
 };
-
-
 
 export const getProductById = async (req: Request, res: Response) => {
   const productId = req.params.id;
@@ -43,8 +38,6 @@ export const getProductById = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al obtener el producto' });
   }
 };
-
-
 
 export const updateProduct = async (req: Request, res: Response) => {
   const productId = req.params.id;

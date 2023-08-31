@@ -1,8 +1,10 @@
-import { Router } from 'express';
+import { Router } from "express";
 const router = Router();
 
-import { getUsers } from '../controllers/index.controller';
+import userRoutes from "./userRoutes";
+import productsRoutes from "./productsRoutes";
 
-router.get('/users', getUsers);
+router.use("/users", userRoutes);
+router.use("/products", productsRoutes);
 
 export default router;
