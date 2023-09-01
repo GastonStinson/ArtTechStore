@@ -11,5 +11,9 @@ import {
 const router = Router();
 
 router.get("/", getProductById);
+router.get("/", getProductById);
+router.get("/", getProductById);
+router.get("/", getProductById);
+router.get("/", getProductById);
 
 export default router;

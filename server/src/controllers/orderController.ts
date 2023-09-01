@@ -14,7 +14,6 @@ export const createOrder = async (req: Request, res: Response) => {
   }
 };
 
-
 export const getOrders = async (req: Request, res: Response) => {
   try {
     const orders = await Order.findAll();
@@ -23,8 +22,6 @@ export const getOrders = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al obtener las órdenes' });
   }
 };
-
-
 
 export const getOrdersByUser = async (req: Request, res: Response) => {
   const userId = req.params.userId;
@@ -42,7 +39,6 @@ export const getOrdersByUser = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al obtener las órdenes del usuario' });
   }
 };
-
 
 export const deleteOrder = async (req: Request, res: Response) => {
   const orderId = req.params.id;

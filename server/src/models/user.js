@@ -1,6 +1,8 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db.js");
 
+const Favourite = require("./favourite");
+
 const Usuario = sequelize.define(
   "user",
   {
@@ -28,9 +30,9 @@ const Usuario = sequelize.define(
   { timestamps: false }
 );
 
+Usuario.hasMany(Favourite, { foreignKey: "userId" }); // Relación de Usuario a Favoritos
+
 module.exports = Usuario;
-
-
 
 // module.exports = (sequelize) => {
 //     sequelize.define('user', {

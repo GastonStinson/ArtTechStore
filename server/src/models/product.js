@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db.js");
-
+const Favourite = require("./favourite.js");
 const Product = sequelize.define(
   "product",
   {
@@ -44,7 +44,12 @@ const Product = sequelize.define(
   { timestamps: false }
 );
 
+// Product.hasMany(Favourite, { foreignKey: "productId" }); // Relación de Producto a Favoritos
+
+
 module.exports = Product;
+
+
 
 // module.exports = (sequelize) => {
 //     sequelize.define('product', {

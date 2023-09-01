@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(indexRoutes);
 
 // puerto
-const port = 3000;
+const port = 3001;
 
 // Sincronizar base de datos
 sequelize.sync({ force: true});

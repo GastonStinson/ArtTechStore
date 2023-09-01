@@ -10,3 +10,4 @@ export const getStatuses = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Error al obtener los estados' });
   }
 };
+ 
